@@ -2,27 +2,27 @@
 
 return [
     '/' => [
-        'title' => 'Dashboard',
+        'title' => 'DASHBOARD',
         'page' => './public/pages/dashboard.php'
     ],
     '/class-list' => [
-        'title' => 'Daftar Kelas',
+        'title' => 'DAFTAR KELAS',
         'page' => './public/pages/classList.php'
     ],
     '/class' => [
-        'title' => 'Kelas',
+        'title' => 'KELAS',
         'page' => './public/pages/class.php'
     ],
     '/laporan' => [
-        'title' => 'Buat Laporan',
+        'title' => 'BUAT LAPORAN',
         'page' => './public/pages/laporan.php'
     ],
     '/data-pelanggaran' => [
-        'title' => 'Data Pelanggaran',
+        'title' => 'DATA PELANGGARAN',
         'page' => './public/pages/dataPelanggaran.php'
     ],
     '/data-prestasi' => [
-        'title' => 'Data Prestasi',
+        'title' => 'DATA PRESTASI',
         'page' => './public/pages/dataPrestasi.php'
     ]
 ];

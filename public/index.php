@@ -4,11 +4,13 @@
 <body>
     <div>
         <?php require __DIR__ . "/../components/sidebar.php" ?>
-        <div class="main-content">
+        <div class="main-content" id="main-content">
             <?php require __DIR__ . '/../components/navbar.php' ?>
             <?php require $content ?? './pages/dashboard.php' ?>
             <?php require __DIR__ . '/../components/footer.php' ?>
         </div>
     </div>
+
+    <script src="public/assets/js/script.js"></script>
 </body>
 </html>
