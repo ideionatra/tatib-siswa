@@ -11,6 +11,6 @@ if (!$route) {
 }
 
 $title = $route['title'];
-$content = $route['page'];
+$content = __DIR__ . '/' . $route['page'];
 
 require './public/index.php';

@@ -33,7 +33,7 @@
     justify-content: center;
     align-items: center;
     padding: .7rem .1rem;
-    gap: .2rem;
+    gap: .7rem;
     background-color: var(--primary-hover);
 }
 .sidebar-title img{
@@ -87,4 +87,60 @@
 /* MAIN */
 .main-content{
     margin-left: 18%;
+}
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem ;
+    background-color: var(--primary-hover);
+}
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.hamburger-navbar{
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.navbar-title{
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.navbar-right{
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    padding-right: 3rem;
+}
+.profile-photo{
+    background-color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    line-height: .9rem;
+}
+.profile h1{
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+.profile p{
+    color: white;
+    opacity: .7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: .6rem;
 }
