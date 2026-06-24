@@ -1,10 +1,14 @@
 <div class="navbar">
     <div class="navbar-left">
-        <div class="hamburger-navbar">
+        <button
+            id="hamburger"
+            class="hamburger-navbar"
+            type="button"
+        >
             <span class="material-icons">
-            menu
+                menu
             </span>
-        </div>
+        </button>
         <div class="navbar-title">
             <?= $title ?? 'Title' ?>
         </div>

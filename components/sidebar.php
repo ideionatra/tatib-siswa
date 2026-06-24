@@ -1,4 +1,4 @@
-<div class="sidebar-container">
+<div class="sidebar-container" id="sidebar-container">
     <div class="sidebar-title">
         <img src="../public/assets/images/logo_tatib.png" alt="">
         <div class="sidebar-title-text">
