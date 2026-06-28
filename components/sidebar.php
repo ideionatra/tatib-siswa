@@ -1,61 +1,68 @@
-<div class="sidebar-container" id="sidebar-container">
-    <div class="sidebar-title">
-        <img src="../public/assets/images/logo_tatib.png" alt="">
-        <div class="sidebar-title-text">
-            <h1>
-                TATIB SISWA
-            </h1>
-            <div>
-                <p>SMA BISNIS DAN</p>
-                <p>TEKNOLOGI INDONESIA</p>
-            </div>
-        </div>
-    </div>
-    <div class="sidebar-lower">
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+        <img
+            src="<?= e(url('/public/assets/images/logo_tatib.png')) ?>"
+            alt="Logo Tatib Siswa"
+            class="sidebar-logo"
+        >
+
         <div>
-            <a href="/" class="sidebar-list">
-                <div>
-                    <span class="material-icons">
-                        home
-                    </span>
-                </div>
-                <p>Home</p>
-            </a>
-            <a href="/class-list" class="sidebar-list">
-                <div>
-                    <span class="material-icons">
-                        school
-                    </span>
-                </div>
-                <p>Daftar Kelas</p>
-            </a>
-            <a href="/laporan" class="sidebar-list">
-                <div>
-                    <span class="material-icons">
-                        assignment_add
-                    </span>
-                </div>
-                <p>Laporan</p>
-            </a>
-            <a href="/data-pelanggaran" class="sidebar-list">
-                <div>
-                    <span class="material-icons">
-                        fmd_bad
-                    </span>
-                </div>
-                <p>Data Pelanggaran</p>
-            </a>
-            <a href="/data-prestasi" class="sidebar-list">
-                <div>
-                    <span class="material-icons">
-                        gpp_good
-                    </span>
-                </div>
-                <p>Data Prestasi</p>
-            </a>
-        </div>
-        <div class="copyright">
-            All Rights Resevred &copy; GokGokGok 2026
+            <strong>Tatib Siswa</strong>
+            <span>SMA Bisnis dan Teknologi Indonesia</span>
         </div>
     </div>
-</div>
+
+    <nav class="sidebar-menu" aria-label="Menu admin">
+        <a
+            href="/admin"
+            class="menu-link <?= $currentPath === '/admin' ? 'active' : '' ?>"
+        >
+            <span class="menu-symbol">D</span>
+            Dashboard
+        </a>
+
+        <a
+            href="/class-list"
+            class="menu-link <?= in_array($currentPath, ['/class-list', '/class'], true) ? 'active' : '' ?>"
+        >
+            <span class="menu-symbol">K</span>
+            Daftar Kelas
+        </a>
+
+        <a
+            href="/laporan"
+            class="menu-link <?= $currentPath === '/laporan' ? 'active' : '' ?>"
+        >
+            <span class="menu-symbol">L</span>
+            Laporan
+        </a>
+
+        <a
+            href="/data-pelanggaran"
+            class="menu-link <?= $currentPath === '/data-pelanggaran' ? 'active' : '' ?>"
+        >
+            <span class="menu-symbol">P</span>
+            Data Pelanggaran
+        </a>
+
+        <a
+            href="/data-prestasi"
+            class="menu-link <?= $currentPath === '/data-prestasi' ? 'active' : '' ?>"
+        >
+            <span class="menu-symbol">A</span>
+            Data Prestasi
+        </a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <a href="/" class="menu-link">
+            <span class="menu-symbol">G</span>
+            Halaman Guest
+        </a>
+
+        <a href="/logout" class="menu-link logout-link">
+            <span class="menu-symbol">X</span>
+            Logout
+        </a>
+    </div>
+</aside>

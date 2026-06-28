@@ -1,33 +1,35 @@
 <?php
 
-class Koneksi {
+declare(strict_types=1);
 
-    private $host = 'localhost';
-    private $user = 'root';
-    private $pass = '';
-    private $db = 'tatib_siswa';
+class Koneksi
+{
+    private static ?mysqli $connection = null;
 
-    private $conn;
-
-    public function connect()
+    public function connect(): mysqli
     {
-        if (!$this->conn) {
-            $this->conn = new mysqli(
-                $this->host, $this->user, $this->pass, $this->db
-            );
-
-            if ($this->conn->connect_error) {
-                die('Connection failed: ' . $this->conn->connect_error);
-            }
+        if (self::$connection instanceof mysqli) {
+            return self::$connection;
         }
 
-        return $this->conn;
-    }
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    public function connClose()
-    {
-        if ($this->conn) {
-            $this->conn->close();
-        }
+        $host = getenv('DB_HOST') ?: 'localhost';
+        $port = (int) (getenv('DB_PORT') ?: 3306);
+        $database = getenv('DB_DATABASE') ?: 'tatib_siswa';
+        $username = getenv('DB_USERNAME') ?: 'root';
+        $password = getenv('DB_PASSWORD') ?: ;
+
+        self::$connection = new mysqli(
+            $host,
+            $username,
+            $password,
+            $database,
+            $port
+        );
+
+        self::$connection->set_charset('utf8mb4');
+
+        return self::$connection;
     }
 }

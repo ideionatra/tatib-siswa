@@ -1,25 +1,28 @@
-<div class="navbar">
-    <div class="navbar-left">
+<header class="topbar">
+    <div class="topbar-left">
         <button
-            id="hamburger"
-            class="hamburger-navbar"
             type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Buka menu"
         >
-            <span class="material-icons">
-                menu
-            </span>
+            ☰
         </button>
-        <div class="navbar-title">
-            <?= $title ?? 'Title' ?>
+
+        <div>
+            <p class="topbar-label">Halaman Admin</p>
+            <h1><?= e($title ?? 'TATIB SISWA') ?></h1>
         </div>
     </div>
-    <div class="navbar-right">
-        <div class="profile-photo">
-            
+
+    <div class="topbar-user">
+        <div class="user-avatar">
+            <?= e(strtoupper(substr(auth_user()['username'] ?? 'A', 0, 1))) ?>
         </div>
-        <div class="profile">
-            <h1>Admin</h1>
-            <p>Guru BK</p>
+
+        <div>
+            <strong><?= e(auth_user()['username'] ?? 'Admin') ?></strong>
+            <span>Administrator</span>
         </div>
     </div>
-</div>
+</header>
