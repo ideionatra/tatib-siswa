@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 23, 2026 at 11:20 AM
+-- Generation Time: Jun 28, 2026 at 04:41 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.10
 
@@ -215,6 +215,25 @@ INSERT INTO `tingkat` (`id`, `index_tingkat`) VALUES
 (2, 'XI'),
 (3, 'XII');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(1, 'admin', '12345');
+
 --
 -- Indexes for dumped tables
 --
@@ -268,6 +287,12 @@ ALTER TABLE `tingkat`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -312,6 +337,12 @@ ALTER TABLE `siswa`
 --
 ALTER TABLE `tingkat`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
