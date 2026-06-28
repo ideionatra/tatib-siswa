@@ -18,7 +18,7 @@ class Koneksi
         $port = (int) (getenv('DB_PORT') ?: 3306);
         $database = getenv('DB_DATABASE') ?: 'tatib_siswa';
         $username = getenv('DB_USERNAME') ?: 'root';
-        $password = getenv('DB_PASSWORD') ?: ;
+        $password = getenv('DB_PASSWORD') ?: '';
 
         self::$connection = new mysqli(
             $host,
