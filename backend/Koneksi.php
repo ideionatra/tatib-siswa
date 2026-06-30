@@ -14,11 +14,11 @@ class Koneksi
 
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-        $host = getenv('DB_HOST') ?: 'localhost';
-        $port = (int) (getenv('DB_PORT') ?: 3306);
-        $database = getenv('DB_DATABASE') ?: 'tatib_siswa';
-        $username = getenv('DB_USERNAME') ?: 'root';
-        $password = getenv('DB_PASSWORD') ?: '';
+        $host = 'localhost';
+        $port = 3306;
+        $database = 'tatib_siswa';
+        $username = 'root';
+        $password = '';
 
         self::$connection = new mysqli(
             $host,

@@ -2,23 +2,6 @@
 
 declare(strict_types=1);
 
-function base_url(): string
-{
-    $scriptName = str_replace(
-        '\\',
-        '/',
-        $_SERVER['SCRIPT_NAME'] ?? '/index.php'
-    );
-
-    $directory = rtrim(dirname($scriptName), '/');
-
-    if ($directory === '.' || $directory === '/') {
-        return '';
-    }
-
-    return $directory;
-}
-
 function url(string $path = '/'): string
 {
     $path = '/' . ltrim($path, '/');
@@ -79,7 +62,7 @@ function verify_csrf(): void
 {
     $sessionToken = $_SESSION['_csrf_token'] ?? '';
     $formToken = $_POST['_token'] ?? '';
-
+    
     if (
         $sessionToken === ''
         || $formToken === ''

@@ -12,7 +12,7 @@ $errorMessage = flash('error');
 
 <body class="layout-<?= e($layout ?? 'error') ?>">
 
-<?php if ($layout === 'admin'): ?>
+<?php if ($layout ?? null === 'admin'): ?>
 
     <div class="app-shell">
         <?php require __DIR__ . '/../components/sidebar.php'; ?>
@@ -42,7 +42,7 @@ $errorMessage = flash('error');
         </div>
     </div>
 
-<?php elseif ( $layout == 'guest'): ?>
+<?php elseif ( $layout ?? null == 'guest'): ?>
 
     <?php if ($successMessage || $errorMessage): ?>
         <div class="global-alerts">
@@ -66,7 +66,7 @@ $errorMessage = flash('error');
         <?php require __DIR__ . '/../components/footer.php'; ?>
     <?php endif; ?>
 
-<?php elseif ( $layout == 'login'): ?>
+<?php elseif ( $layout ?? null == 'login'): ?>
 
     <?php if ($successMessage || $errorMessage): ?>
         <div class="global-alerts">

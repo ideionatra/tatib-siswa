@@ -16,17 +16,6 @@ require_once __DIR__ . '/backend/helpers.php';
 $routes = require __DIR__ . '/routes/web.php';
 
 $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-$basePath = base_url();
-
-if (
-    $basePath !== ''
-    && (
-        $requestPath === $basePath
-        || str_starts_with($requestPath, $basePath . '/')
-    )
-) {
-    $requestPath = substr($requestPath, strlen($basePath));
-}
 
 $currentPath = '/' . trim($requestPath, '/');
 
